@@ -1,0 +1,53 @@
+﻿<fw:AcrylicWindow x:Class="T7MVM_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:local="clr-namespace:T7MVM_GUI"
+        mc:Ignorable="d"
+        Title="T7MVM GUI" Height="270.35" Width="451.864" Loaded="Window_Loaded" Closing="Window_Closing" AcrylicWindowStyle="Normal" TitleBarMode="Extend" NoiseOpacity="0" FallbackColor="Black" TintColor="Black" TintOpacity="1" Background="{x:Null}">
+    <Grid fw:PointerTracker.Enabled="True" Background="#70FFFFFF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="45*" />
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Foreground="{DynamicResource SystemAltHighColorBrush}" x:Name="timescale_group"  Grid.Column="1" Grid.Row="2" Text="Timescale" VerticalAlignment="Center" Margin="0,5"/>
+        <TextBox x:Name="timescale" Grid.Column="4" Grid.Row="2" Text="1" Margin="10,0,0,0" TextAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource TextBoxRevealStyle}"/>
+
+        <Button Foreground="{DynamicResource SystemAltHighColorBrush}" x:Name="set_timescale" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="6" Content="Set" Click="Set_timescale_Click" Style="{StaticResource ButtonRevealStyle}" Margin="0,10,0,10"/>
+
+        <TextBlock Text="Console Command" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Margin="0,5" />
+        <TextBox x:Name="console_cmd" Grid.Column="4" Grid.Row="7" Text="" Margin="10,0,0,0" TextAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource TextBoxRevealStyle}"/>
+
+        <Button Foreground="{DynamicResource SystemAltHighColorBrush}" x:Name="send_cmd" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="9" Content="Send" Click="Send_cmd_Click" Style="{StaticResource ButtonRevealStyle}" Margin="0,10,0,10"/>
+
+        <StatusBar Background="{DynamicResource SystemBaseLowColorBrush}" x:Name="status_bar" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="7">
+            <StatusBarItem>
+                <TextBlock Foreground="{DynamicResource SystemBaseHighColorBrush}" x:Name="statusbar_label" Text="Ready to send"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</fw:AcrylicWindow>
